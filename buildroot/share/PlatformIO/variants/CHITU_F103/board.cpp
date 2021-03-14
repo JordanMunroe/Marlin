@@ -79,7 +79,7 @@ extern const stm32_pin_info PIN_MAP[BOARD_NR_GPIO_PINS] = {
     uint8 adc_channel;          Pin ADC channel, or ADCx if none.
   */
 
-  {&gpioa, &timer2, &adc1,  0, 1,    0}, /* PA0 */
+  {&gpioa, &timer5, &adc1,  0, 1,    0}, /* PA0 */
   {&gpioa, &timer2, &adc1,  1, 2,    1}, /* PA1 */
   {&gpioa, &timer2, &adc1,  2, 3,    2}, /* PA2 */
   {&gpioa, &timer2, &adc1,  3, 4,    3}, /* PA3 */
