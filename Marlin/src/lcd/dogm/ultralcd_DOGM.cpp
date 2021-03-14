@@ -323,7 +323,9 @@ void MarlinUI::clear_lcd() { } // Automatically cleared by Picture Loop
     if (!PAGE_CONTAINS(row_y1 + 1, row_y2 + 2)) return false;
 
     if (sel) {
-      #if ENABLED(MENU_HOLLOW_FRAME)
+      #if ENABLED(MENU_TAB) //Draw a 'tab' on the left side of the menu item
+        u8g.drawBox(0, row_y1 + 2, 3, MENU_FONT_HEIGHT - 2);
+      #elif ENABLED(MENU_HOLLOW_FRAME)
         u8g.drawHLine(0, row_y1 + 1, LCD_PIXEL_WIDTH);
         u8g.drawHLine(0, row_y2 + 2, LCD_PIXEL_WIDTH);
       #else
@@ -338,7 +340,12 @@ void MarlinUI::clear_lcd() { } // Automatically cleared by Picture Loop
 
     if (!PAGE_CONTAINS(row_y1, row_y2)) return false;
 
-    lcd_moveto(0, row_y2);
+
+    #if ENABLED(MENU_TAB)
+      lcd_moveto(4, row_y2); //Offset for tab view
+    #else
+      lcd_moveto(0, row_y2);
+    #endif
     return true;
   }
 
