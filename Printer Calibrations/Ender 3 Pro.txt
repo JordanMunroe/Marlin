@@ -1,0 +1,2 @@
+E-Steps: M92 E138.80597
+Linear Advance: M900 K0.55
