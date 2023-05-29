@@ -1,2 +1,6 @@
 E-Steps: M92 E138.80597
 Linear Advance: M900 K0.55
+
+Input Shaping:
+    M593 X F35.72
+    M593 Y F35.72
